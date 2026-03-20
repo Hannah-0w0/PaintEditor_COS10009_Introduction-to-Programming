@@ -1,0 +1,24 @@
+@echo off
+gcc -g paint_editor.c -o paint_editor.exe -DSDL_MAIN_HANDLED ^
+-IC:/msys64/mingw64/include ^
+-IC:/msys64/mingw64/include/gtk-3.0 ^
+-IC:/msys64/mingw64/include/pango-1.0 ^
+-IC:/msys64/mingw64/include/glib-2.0 ^
+-IC:/msys64/mingw64/include/SDL2 ^
+-IC:/msys64/mingw64/lib/glib-2.0/include ^
+-IC:/msys64/mingw64/include/harfbuzz ^
+-IC:/msys64/mingw64/include/freetype2 ^
+-IC:/msys64/mingw64/include/libpng16 ^
+-IC:/msys64/mingw64/include/fribidi ^
+-IC:/msys64/mingw64/include/cairo ^
+-IC:/msys64/mingw64/include/pixman-1 ^
+-IC:/msys64/mingw64/include/gdk-pixbuf-2.0 ^
+-IC:/msys64/mingw64/include/atk-1.0 ^
+-mms-bitfields ^
+-LC:/msys64/mingw64/lib ^
+-lgtk-3 -lgdk-3 -lgdi32 -limm32 -lshell32 -lole32 ^
+-Wl,-luuid -lwinmm -ldwmapi -lsetupapi -lcfgmgr32 -lhid ^
+-lm -lpangowin32-1.0 -lpangocairo-1.0 -lpango-1.0 ^
+-lharfbuzz -latk-1.0 -lcairo-gobject -lcairo ^
+-lgdk_pixbuf-2.0 -lgio-2.0 -lgobject-2.0 -lglib-2.0 -lintl ^
+-lSDL2main -lSDL2 -lSDL2_mixer
