@@ -59,7 +59,7 @@ The project includes all source files needed to compile. Use the following comma
 
 ```bash
 gcc -std=c11 -Wall -Wextra \
-  paint_editor.c ui.c events.c drawing.c audio.c history.c \
+   src/paint_editor.c src/ui.c src/events.c src/drawing.c src/audio.c src/history.c \
   `pkg-config --cflags gtk+-3.0 cairo glib-2.0` \
   `pkg-config --libs gtk+-3.0 cairo glib-2.0 SDL2 SDL2_mixer` \
   -o paint_editor.exe
@@ -68,7 +68,7 @@ gcc -std=c11 -Wall -Wextra \
 Or on Linux/macOS:
 ```bash
 gcc -std=c11 -Wall -Wextra \
-  paint_editor.c ui.c events.c drawing.c audio.c history.c \
+   src/paint_editor.c src/ui.c src/events.c src/drawing.c src/audio.c src/history.c \
   `pkg-config --cflags gtk+-3.0 cairo glib-2.0` \
   `pkg-config --libs gtk+-3.0 cairo glib-2.0 SDL2 SDL2_mixer` \
   -o paint_editor
@@ -96,23 +96,23 @@ Or double-click the executable from your file manager.
 
 | File | Purpose |
 |------|---------|
-| `paint_editor.c/.h` | Application bootstrap, lifecycle management, and shared state definitions |
-| `ui.c/.h` | UI widget creation: toolbars, sliders, canvas, cursors, and zoom controls |
-| `events.c/.h` | Input event handlers (mouse, scroll, text) and action creation logic |
-| `drawing.c/.h` | Rendering engine: surface management, brush strokes, and flood fill algorithm |
-| `history.c/.h` | Undo/redo stack management and action memory cleanup |
-| `audio.c/.h` | Audio initialization, sound playback, and SDL_mixer integration |
+| `src/paint_editor.c/.h` | Application bootstrap, lifecycle management, and shared state definitions |
+| `src/ui.c/.h` | UI widget creation: toolbars, sliders, canvas, cursors, and zoom controls |
+| `src/events.c/.h` | Input event handlers (mouse, scroll, text) and action creation logic |
+| `src/drawing.c/.h` | Rendering engine: surface management, brush strokes, and flood fill algorithm |
+| `src/history.c/.h` | Undo/redo stack management and action memory cleanup |
+| `src/audio.c/.h` | Audio initialization, sound playback, and SDL_mixer integration |
 
 ### Asset Directories
 
 | Directory | Contents |
 |-----------|----------|
-| `audio/` | Tool sound effects (MP3 format) for pencil, eraser, highlighter, brush, and fill |
-| `icons/` | PNG tool icons and cursors |
+| `assets/audio/` | Tool sound effects (MP3 format) for pencil, eraser, highlighter, brush, and fill |
+| `assets/icons/` | PNG tool icons and cursors |
 
 ### Shared State
 
-All modules share application state through `paint_editor.h` extern declarations:
+All modules share application state through `src/paint_editor.h` extern declarations:
 - `surface` - Cairo drawing surface
 - `canvas` - GTK canvas widget
 - `current_tool` - Active drawing tool
@@ -212,12 +212,12 @@ Each module exposes a public interface via header files while keeping implementa
 
 ### Application won't start
 - Ensure all libraries are installed: `pkg-config --modversion gtk+-3.0`
-- Check that audio files exist in `audio/` directory
-- Verify icon files exist in `icons/` directory
+- Check that audio files exist in `assets/audio/` directory
+- Verify icon files exist in `assets/icons/` directory
 
 ### No sound effects
-- Confirm `audio/*.mp3` files are in the correct directory
-- Check SDL_mixer initialization with: `get_errors` on audio.c
+- Confirm `assets/audio/*.mp3` files are in the correct directory
+- Check SDL_mixer initialization with: `get_errors` on src/audio.c
 
 ### GTK not found during compilation
 - Re-run MSYS2 package installation commands
@@ -225,7 +225,7 @@ Each module exposes a public interface via header files while keeping implementa
 
 ### Compilation errors
 - Ensure C11 standard support: use `-std=c11` flag
-- Verify all source files are present
+- Verify all source files are present in `src/`
 - Check for missing header files
 
 ## Future Enhancements

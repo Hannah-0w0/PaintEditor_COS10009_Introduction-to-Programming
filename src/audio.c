@@ -19,10 +19,10 @@ void init_audio(void) {
         return;
     }
 
-    eraser_sound = Mix_LoadWAV("audio/eraser.mp3");
-    pencil_sound = Mix_LoadWAV("audio/pencil_scribble.mp3");
-    fill_sound = Mix_LoadWAV("audio/fill_bucket.mp3");
-    highlighter_sound = Mix_LoadWAV("audio/highlighter.mp3");
+    eraser_sound = Mix_LoadWAV("assets/audio/eraser.mp3");
+    pencil_sound = Mix_LoadWAV("assets/audio/pencil_scribble.mp3");
+    fill_sound = Mix_LoadWAV("assets/audio/fill_bucket.mp3");
+    highlighter_sound = Mix_LoadWAV("assets/audio/highlighter.mp3");
 
     if (!eraser_sound || !pencil_sound || !fill_sound || !highlighter_sound) {
         g_print("Warning: Some sound effects could not be loaded!\n");

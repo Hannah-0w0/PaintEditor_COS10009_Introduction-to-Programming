@@ -134,25 +134,25 @@ void create_tool_cursors(void) {
     GdkDisplay *display = gdk_display_get_default();
     GdkPixbuf *pixbuf;
 
-    pixbuf = gdk_pixbuf_new_from_file("icons/pencil.png", NULL);
+    pixbuf = gdk_pixbuf_new_from_file("assets/icons/pencil.png", NULL);
     if (pixbuf) {
         pencil_cursor = gdk_cursor_new_from_pixbuf(display, pixbuf, 0, 0);
         g_object_unref(pixbuf);
     }
 
-    pixbuf = gdk_pixbuf_new_from_file("icons/eraser.png", NULL);
+    pixbuf = gdk_pixbuf_new_from_file("assets/icons/eraser.png", NULL);
     if (pixbuf) {
         eraser_cursor = gdk_cursor_new_from_pixbuf(display, pixbuf, 0, 0);
         g_object_unref(pixbuf);
     }
 
-    pixbuf = gdk_pixbuf_new_from_file("icons/fill_bucket.png", NULL);
+    pixbuf = gdk_pixbuf_new_from_file("assets/icons/fill_bucket.png", NULL);
     if (pixbuf) {
         fill_cursor = gdk_cursor_new_from_pixbuf(display, pixbuf, 0, 0);
         g_object_unref(pixbuf);
     }
 
-    pixbuf = gdk_pixbuf_new_from_file("icons/highlighter.png", NULL);
+    pixbuf = gdk_pixbuf_new_from_file("assets/icons/highlighter.png", NULL);
     if (pixbuf) {
         highlighter_cursor = gdk_cursor_new_from_pixbuf(display, pixbuf, 0, 0);
         g_object_unref(pixbuf);
@@ -222,16 +222,16 @@ GtkWidget *create_tools_toolbar(void) {
         const char *tooltip;
         Tool tool;
     } tools[] = {
-        {"icons/pencil.png", "Pencil", TOOL_PENCIL},
-        {"icons/eraser.png", "Eraser", TOOL_ERASER},
-        {"icons/highlighter.png", "Highlighter", TOOL_HIGHLIGHTER},
-        {"icons/textbox.png", "Text", TOOL_TEXT},
-        {"icons/rectangle.png", "Rectangle", TOOL_RECTANGLE},
-        {"icons/triangle.png", "Triangle", TOOL_TRIANGLE},
-        {"icons/square.png", "Square", TOOL_SQUARE},
-        {"icons/circle.png", "Circle", TOOL_CIRCLE},
-        {"icons/line.png", "Line", TOOL_LINE},
-        {"icons/fill_bucket.png", "Fill", TOOL_FILL},
+        {"assets/icons/pencil.png", "Pencil", TOOL_PENCIL},
+        {"assets/icons/eraser.png", "Eraser", TOOL_ERASER},
+        {"assets/icons/highlighter.png", "Highlighter", TOOL_HIGHLIGHTER},
+        {"assets/icons/textbox.png", "Text", TOOL_TEXT},
+        {"assets/icons/rectangle.png", "Rectangle", TOOL_RECTANGLE},
+        {"assets/icons/triangle.png", "Triangle", TOOL_TRIANGLE},
+        {"assets/icons/square.png", "Square", TOOL_SQUARE},
+        {"assets/icons/circle.png", "Circle", TOOL_CIRCLE},
+        {"assets/icons/line.png", "Line", TOOL_LINE},
+        {"assets/icons/fill_bucket.png", "Fill", TOOL_FILL},
         {NULL, NULL, 0}
     };
 
